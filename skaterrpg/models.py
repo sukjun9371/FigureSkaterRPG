@@ -35,6 +35,7 @@ class ElementDef:
     base_value: float
     keys: int  # length of the key sequence in the mini-game
     stat: str  # skater stat that drives quality (jumping, spinning, ...)
+    layout: str  # which key layout from rules.json, e.g. "jump_hard"
 
     @property
     def is_jump(self) -> bool:
@@ -45,7 +46,7 @@ class ElementDef:
 class Rules:
     """Tunable numbers from data/rules.json."""
 
-    keyset: list[str]
+    keys: dict[str, list[list[str]]]  # layout name -> key groups, see rules.json
     goe_step: float
     goe_min: int
     goe_max: int
@@ -56,6 +57,11 @@ class Rules:
     seconds_per_key: float
     reaction_seconds: float
     combo_consistency_factor: float
+    luck_scale: float  # landing roll strength, see minigame.landing_check
+    surprise_chance: dict[str, float]  # layout -> chance one key changes mid-element
+    strength_bonus: int
+    weakness_penalty: int
+    conditions: list[dict]  # condition of the week tiers, best first
     program_rules: dict[str, dict]
 
 
@@ -76,6 +82,9 @@ class Skater:
     composure: int = 50  # "Nerves" in the design doc: higher = calmer
     fatigue: int = 0
     traits: list[str] = field(default_factory=list)
+    strengths: list[str] = field(default_factory=list)  # element families, e.g. "Lz", "LSp"
+    weaknesses: list[str] = field(default_factory=list)
+    condition: str = "Normal"  # condition of the week, see condition.py
     consistency: dict[str, int] = field(default_factory=dict)  # element code -> %
     programs: dict[str, Program] = field(default_factory=dict)
 

@@ -7,6 +7,8 @@
   "composure": 55,
   "fatigue": 20,
   "traits": ["Perfectionist"],
+  "strengths": ["Lz", "LSp"],
+  "weaknesses": ["F", "StSq"],
   "consistency": {
     "2T": 95, "2Lo": 90, "2A": 88, "3T": 85, "3S": 80, "3Lo": 74, "3F": 72, "3Lz": 68,
     "FCSp4": 80, "LSp4": 75, "CCoSp4": 78, "StSq3": 80, "ChSq1": 92

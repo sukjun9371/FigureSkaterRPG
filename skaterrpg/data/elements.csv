@@ -1,57 +1,57 @@
-code,name,type,family,level,base_value,keys,stat
-1T,Single Toe Loop,jump,T,,0.40,2,jumping
-1S,Single Salchow,jump,S,,0.40,2,jumping
-1Lo,Single Loop,jump,Lo,,0.50,2,jumping
-1F,Single Flip,jump,F,,0.50,2,jumping
-1Lz,Single Lutz,jump,Lz,,0.60,2,jumping
-1A,Single Axel,jump,A,,1.10,2,jumping
-2T,Double Toe Loop,jump,T,,1.30,3,jumping
-2S,Double Salchow,jump,S,,1.30,3,jumping
-2Lo,Double Loop,jump,Lo,,1.70,3,jumping
-2F,Double Flip,jump,F,,1.80,3,jumping
-2Lz,Double Lutz,jump,Lz,,2.10,3,jumping
-2A,Double Axel,jump,A,,3.30,4,jumping
-3T,Triple Toe Loop,jump,T,,4.20,4,jumping
-3S,Triple Salchow,jump,S,,4.30,4,jumping
-3Lo,Triple Loop,jump,Lo,,4.90,4,jumping
-3F,Triple Flip,jump,F,,5.30,5,jumping
-3Lz,Triple Lutz,jump,Lz,,5.90,5,jumping
-3A,Triple Axel,jump,A,,8.00,5,jumping
-4T,Quad Toe Loop,jump,T,,9.50,6,jumping
-4S,Quad Salchow,jump,S,,9.70,6,jumping
-LSpB,Layback Spin (Base),spin,LSp,0,1.20,3,spinning
-LSp1,Layback Spin Level 1,spin,LSp,1,1.50,3,spinning
-LSp2,Layback Spin Level 2,spin,LSp,2,1.90,4,spinning
-LSp3,Layback Spin Level 3,spin,LSp,3,2.40,5,spinning
-LSp4,Layback Spin Level 4,spin,LSp,4,2.70,6,spinning
-CSpB,Camel Spin (Base),spin,CSp,0,1.10,3,spinning
-CSp1,Camel Spin Level 1,spin,CSp,1,1.40,3,spinning
-CSp2,Camel Spin Level 2,spin,CSp,2,1.80,4,spinning
-CSp3,Camel Spin Level 3,spin,CSp,3,2.30,5,spinning
-CSp4,Camel Spin Level 4,spin,CSp,4,2.60,6,spinning
-SSpB,Sit Spin (Base),spin,SSp,0,1.10,3,spinning
-SSp1,Sit Spin Level 1,spin,SSp,1,1.30,3,spinning
-SSp2,Sit Spin Level 2,spin,SSp,2,1.60,4,spinning
-SSp3,Sit Spin Level 3,spin,SSp,3,2.10,5,spinning
-SSp4,Sit Spin Level 4,spin,SSp,4,2.50,6,spinning
-FCSpB,Flying Camel Spin (Base),spin,FCSp,0,1.60,3,spinning
-FCSp1,Flying Camel Spin Level 1,spin,FCSp,1,1.90,3,spinning
-FCSp2,Flying Camel Spin Level 2,spin,FCSp,2,2.20,4,spinning
-FCSp3,Flying Camel Spin Level 3,spin,FCSp,3,2.80,5,spinning
-FCSp4,Flying Camel Spin Level 4,spin,FCSp,4,3.20,6,spinning
-FSSpB,Flying Sit Spin (Base),spin,FSSp,0,1.70,3,spinning
-FSSp1,Flying Sit Spin Level 1,spin,FSSp,1,2.00,3,spinning
-FSSp2,Flying Sit Spin Level 2,spin,FSSp,2,2.30,4,spinning
-FSSp3,Flying Sit Spin Level 3,spin,FSSp,3,2.60,5,spinning
-FSSp4,Flying Sit Spin Level 4,spin,FSSp,4,3.00,6,spinning
-CCoSpB,Change Foot Combination Spin (Base),spin,CCoSp,0,1.70,3,spinning
-CCoSp1,Change Foot Combination Spin Level 1,spin,CCoSp,1,2.00,3,spinning
-CCoSp2,Change Foot Combination Spin Level 2,spin,CCoSp,2,2.50,4,spinning
-CCoSp3,Change Foot Combination Spin Level 3,spin,CCoSp,3,3.00,5,spinning
-CCoSp4,Change Foot Combination Spin Level 4,spin,CCoSp,4,3.50,6,spinning
-StSqB,Step Sequence (Base),step,StSq,0,1.50,3,footwork
-StSq1,Step Sequence Level 1,step,StSq,1,1.80,3,footwork
-StSq2,Step Sequence Level 2,step,StSq,2,2.60,4,footwork
-StSq3,Step Sequence Level 3,step,StSq,3,3.30,5,footwork
-StSq4,Step Sequence Level 4,step,StSq,4,3.90,6,footwork
-ChSq1,Choreographic Sequence,choreo,ChSq,1,3.00,4,artistry
+code,name,type,family,level,base_value,keys,stat,layout
+1T,Single Toe Loop,jump,T,,0.40,2,jumping,jump_easy
+1S,Single Salchow,jump,S,,0.40,2,jumping,jump_easy
+1Lo,Single Loop,jump,Lo,,0.50,2,jumping,jump_easy
+1F,Single Flip,jump,F,,0.50,2,jumping,jump_easy
+1Lz,Single Lutz,jump,Lz,,0.60,2,jumping,jump_easy
+1A,Single Axel,jump,A,,1.10,2,jumping,jump_easy
+2T,Double Toe Loop,jump,T,,1.30,3,jumping,jump_easy
+2S,Double Salchow,jump,S,,1.30,3,jumping,jump_easy
+2Lo,Double Loop,jump,Lo,,1.70,3,jumping,jump_easy
+2F,Double Flip,jump,F,,1.80,3,jumping,jump_easy
+2Lz,Double Lutz,jump,Lz,,2.10,3,jumping,jump_easy
+2A,Double Axel,jump,A,,3.30,4,jumping,jump_mid
+3T,Triple Toe Loop,jump,T,,4.20,4,jumping,jump_mid
+3S,Triple Salchow,jump,S,,4.30,4,jumping,jump_mid
+3Lo,Triple Loop,jump,Lo,,4.90,4,jumping,jump_mid
+3F,Triple Flip,jump,F,,5.30,5,jumping,jump_hard
+3Lz,Triple Lutz,jump,Lz,,5.90,5,jumping,jump_hard
+3A,Triple Axel,jump,A,,8.00,5,jumping,jump_hard
+4T,Quad Toe Loop,jump,T,,9.50,6,jumping,jump_hard
+4S,Quad Salchow,jump,S,,9.70,6,jumping,jump_hard
+LSpB,Layback Spin (Base),spin,LSp,0,1.20,3,spinning,spin
+LSp1,Layback Spin Level 1,spin,LSp,1,1.50,3,spinning,spin
+LSp2,Layback Spin Level 2,spin,LSp,2,1.90,4,spinning,spin
+LSp3,Layback Spin Level 3,spin,LSp,3,2.40,5,spinning,spin
+LSp4,Layback Spin Level 4,spin,LSp,4,2.70,6,spinning,spin
+CSpB,Camel Spin (Base),spin,CSp,0,1.10,3,spinning,spin
+CSp1,Camel Spin Level 1,spin,CSp,1,1.40,3,spinning,spin
+CSp2,Camel Spin Level 2,spin,CSp,2,1.80,4,spinning,spin
+CSp3,Camel Spin Level 3,spin,CSp,3,2.30,5,spinning,spin
+CSp4,Camel Spin Level 4,spin,CSp,4,2.60,6,spinning,spin
+SSpB,Sit Spin (Base),spin,SSp,0,1.10,3,spinning,spin
+SSp1,Sit Spin Level 1,spin,SSp,1,1.30,3,spinning,spin
+SSp2,Sit Spin Level 2,spin,SSp,2,1.60,4,spinning,spin
+SSp3,Sit Spin Level 3,spin,SSp,3,2.10,5,spinning,spin
+SSp4,Sit Spin Level 4,spin,SSp,4,2.50,6,spinning,spin
+FCSpB,Flying Camel Spin (Base),spin,FCSp,0,1.60,3,spinning,spin
+FCSp1,Flying Camel Spin Level 1,spin,FCSp,1,1.90,3,spinning,spin
+FCSp2,Flying Camel Spin Level 2,spin,FCSp,2,2.20,4,spinning,spin
+FCSp3,Flying Camel Spin Level 3,spin,FCSp,3,2.80,5,spinning,spin
+FCSp4,Flying Camel Spin Level 4,spin,FCSp,4,3.20,6,spinning,spin
+FSSpB,Flying Sit Spin (Base),spin,FSSp,0,1.70,3,spinning,spin
+FSSp1,Flying Sit Spin Level 1,spin,FSSp,1,2.00,3,spinning,spin
+FSSp2,Flying Sit Spin Level 2,spin,FSSp,2,2.30,4,spinning,spin
+FSSp3,Flying Sit Spin Level 3,spin,FSSp,3,2.60,5,spinning,spin
+FSSp4,Flying Sit Spin Level 4,spin,FSSp,4,3.00,6,spinning,spin
+CCoSpB,Change Foot Combination Spin (Base),spin,CCoSp,0,1.70,3,spinning,spin
+CCoSp1,Change Foot Combination Spin Level 1,spin,CCoSp,1,2.00,3,spinning,spin
+CCoSp2,Change Foot Combination Spin Level 2,spin,CCoSp,2,2.50,4,spinning,spin
+CCoSp3,Change Foot Combination Spin Level 3,spin,CCoSp,3,3.00,5,spinning,spin
+CCoSp4,Change Foot Combination Spin Level 4,spin,CCoSp,4,3.50,6,spinning,spin
+StSqB,Step Sequence (Base),step,StSq,0,1.50,3,footwork,step
+StSq1,Step Sequence Level 1,step,StSq,1,1.80,3,footwork,step
+StSq2,Step Sequence Level 2,step,StSq,2,2.60,4,footwork,step
+StSq3,Step Sequence Level 3,step,StSq,3,3.30,5,footwork,step
+StSq4,Step Sequence Level 4,step,StSq,4,3.90,6,footwork,step
+ChSq1,Choreographic Sequence,choreo,ChSq,1,3.00,4,artistry,step
