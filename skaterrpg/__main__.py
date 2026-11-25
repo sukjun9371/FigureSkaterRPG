@@ -10,8 +10,10 @@ import argparse
 import random
 
 from .competition import Competition
+from .condition import condition_modifier, roll_condition
 from .data_loader import load_catalog, load_events, load_names, load_rules, load_skater
-from .minigame import AutoExecutor, KeyPressExecutor
+from .minigame import AutoExecutor, KeyPressExecutor, LiveKeyExecutor
+from .terminal import live_keys_supported
 from .programs import validate_program
 from .scoresheet import SEGMENT_NAMES, format_segment, format_standings
 
@@ -30,6 +32,7 @@ def show_skater(skater) -> None:
     print(f"\n{skater.name}, {skater.age}  ({skater.club})")
     print("  " + "  ".join(f"{k.title()} {v}" for k, v in skater.stats.items()))
     print(f"  Composure {skater.composure}  Fatigue {skater.fatigue}  Traits: {', '.join(skater.traits) or '-'}")
+    print(f"  Strengths: {', '.join(skater.strengths) or '-'}   Weaknesses: {', '.join(skater.weaknesses) or '-'}")
     for seg, prog in skater.programs.items():
         print(f"  {SEGMENT_NAMES[seg]}: {', '.join(prog.elements)}")
 
@@ -39,6 +42,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--auto", action="store_true", help="skip the key mini-game and roll dice")
     parser.add_argument("--event", help="event id from data/events.json, e.g. nationals")
     parser.add_argument("--seed", type=int, help="random seed, for repeatable runs")
+    parser.add_argument("--no-live", action="store_true", help="type keys then Enter, without the live timer")
     args = parser.parse_args(argv)
 
     rng = random.Random(args.seed)
@@ -68,10 +72,27 @@ def main(argv: list[str] | None = None) -> None:
     if auto:
         executor = AutoExecutor(rng)
     else:
-        executor = KeyPressExecutor(rules.keyset, rng)
-        print("\nFor each element you'll see keys like  J  K  D  F.")
-        print("Type them (spaces optional) and press Enter before time runs out.")
+        live = live_keys_supported() and not args.no_live
+        if live:
+            executor = LiveKeyExecutor(rules.keys, rng, luck_scale=rules.luck_scale, surprise_chance=rules.surprise_chance)
+        else:
+            executor = KeyPressExecutor(rules.keys, rng, luck_scale=rules.luck_scale)
+        print("\nFor each element you'll see keys to type, e.g.")
+        print("  SPIN  A  S  D  F      STEP  E  R  T  Y      JUMP  Q  P  1  0  (left, right, left...)")
+        print("Harder jumps reach further: easy Q W / O P, mid adds Z X / . ,  hard adds 1 2 / 9 0 /")
+        if live:
+            print("Press Space when ready, then type the keys before the bar runs out (no Enter needed).")
+        else:
+            print("Type them (spaces optional) and press Enter before time runs out.")
+        print("In a combination each jump is typed on its own; a fall ends the combination.")
+        if live:
+            print("Watch out: sometimes a key ahead of you changes (shown in magenta with '!').")
+        print("Even when you type it right, she can still slip: well-trained elements, her strengths")
+        print("and a good week make that less likely.")
         print("0 mistakes = clean, 1 = shaky, 2 = under-rotated, 3+ or too slow = fall.")
+
+    condition = roll_condition(skater, rules, rng)
+    print(f"\nCondition this week: {condition}  (consistency {condition_modifier(condition, rules):+d})")
 
     competition = Competition(event, skater, catalog, rules, executor, load_names(), rng)
 

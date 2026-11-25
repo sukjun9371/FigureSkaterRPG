@@ -1,6 +1,26 @@
 {
   "_comment": "Tunable game rules. Senior women's singles. Change numbers here, not in code.",
-  "keyset": ["A", "S", "D", "F", "J", "K", "L"],
+  "_keys_comment": "Key layouts. Each element names its layout in elements.csv. A layout is a list of key groups; a sequence takes turns between the groups, so two groups on opposite sides make the hands jump back and forth. Harder jumps get wider reaches.",
+  "keys": {
+    "spin": [["A", "S", "D", "F", "J", "K", "L"]],
+    "step": [["E", "R", "T", "Y", "U", "I"]],
+    "jump_easy": [["Q", "W"], ["O", "P"]],
+    "jump_mid": [["Q", "W", "Z", "X"], ["P", "O", ".", ","]],
+    "jump_hard": [["1", "2", "Q", "Z"], ["9", "0", ".", "/"]]
+  },
+  "_luck_comment": "Landing roll: after you type an element, chance it still slips one step = (100 - effective consistency)% x luck_scale. Surprise: chance per layout that one upcoming key changes while you type.",
+  "luck_scale": 0.35,
+  "surprise_chance": {"spin": 0.15, "step": 0.2, "jump_easy": 0.1, "jump_mid": 0.2, "jump_hard": 0.3},
+  "strength_bonus": 8,
+  "weakness_penalty": 8,
+  "_conditions_comment": "Condition of the week, best first. Roll = 1-100 - fatigue/2 + (composure-50)/5; the first tier whose min the roll reaches applies its consistency modifier.",
+  "conditions": [
+    {"name": "Great", "min": 80, "modifier": 8},
+    {"name": "Good", "min": 60, "modifier": 4},
+    {"name": "Normal", "min": 30, "modifier": 0},
+    {"name": "Off", "min": 10, "modifier": -5},
+    {"name": "Bad", "min": -100, "modifier": -10}
+  ],
   "goe_step": 0.10,
   "goe_min": -5,
   "goe_max": 5,

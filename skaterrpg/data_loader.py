@@ -31,13 +31,15 @@ def load_catalog(path: Path | None = None) -> dict[str, ElementDef]:
                 base_value=float(row["base_value"]),
                 keys=int(row["keys"]),
                 stat=row["stat"],
+                layout=row["layout"],
             )
     return catalog
 
 
 def load_rules(path: Path | None = None) -> Rules:
     data = _read_json(path or DATA_DIR / "rules.json")
-    data.pop("_comment", None)
+    for key in [k for k in data if k.startswith("_")]:
+        data.pop(key)
     return Rules(**data)
 
 
