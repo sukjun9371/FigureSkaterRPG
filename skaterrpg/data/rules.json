@@ -1,0 +1,18 @@
+{
+  "_comment": "Tunable game rules. Senior women's singles. Change numbers here, not in code.",
+  "keyset": ["A", "S", "D", "F", "J", "K", "L"],
+  "goe_step": 0.10,
+  "goe_min": -5,
+  "goe_max": 5,
+  "under_rotation_factor": 0.80,
+  "fall_base_factor": 0.80,
+  "fall_deductions": [1.0, 1.0, 2.0, 2.0, 3.0],
+  "pcs_factor": {"short": 1.33, "free": 2.67},
+  "seconds_per_key": 0.7,
+  "reaction_seconds": 1.5,
+  "combo_consistency_factor": 0.95,
+  "program_rules": {
+    "short": {"jumps": 3, "spins": 3, "steps": 1, "choreo": 0, "max_combos": 1, "needs_axel": true},
+    "free": {"jumps": 7, "spins": 3, "steps": 1, "choreo": 1, "max_combos": 3, "needs_axel": false, "max_repeats": 2}
+  }
+}

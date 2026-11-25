@@ -1,0 +1,10 @@
+{
+  "_comment": "Event names are kept here so they are easy to swap. Real-sounding names are fine for private play; replace trademarked names before sharing the game publicly. winning_total is a typical winner's combined score.",
+  "events": [
+    {"id": "club_cup", "name": "Autumn Club Cup", "level": "Club cup", "winning_total": 60, "field_size": 8},
+    {"id": "regional", "name": "Regional Championships", "level": "Regional", "winning_total": 110, "field_size": 12},
+    {"id": "nationals", "name": "National Championships", "level": "National", "winning_total": 180, "field_size": 16},
+    {"id": "grand_prix", "name": "Grand Prix: Skate Canada", "level": "International series", "winning_total": 210, "field_size": 12},
+    {"id": "worlds", "name": "World Championships", "level": "World", "winning_total": 225, "field_size": 24}
+  ]
+}
